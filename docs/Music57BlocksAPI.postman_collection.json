@@ -1,0 +1,221 @@
+{
+	"info": {
+		"_postman_id": "84d882b0-284d-45e9-9493-f26f9ef346ac",
+		"name": "Music57BlocksAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstname\" : \"ManuelSSS\",\n    \"lastname\" : \"Sánchez\",\n    \"email\": \"manuel@57blocks2.com\",\n    \"password\": \"Aa@0123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5678/api/v1/auth/register",
+					"host": [
+						"localhost"
+					],
+					"port": "5678",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"manuel@57blocks.com\",\n    \"password\": \"Aa@0123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5678/api/v1/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "5678",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Public Songs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5678/api/v1/public/songs?page=0&size=20",
+					"host": [
+						"localhost"
+					],
+					"port": "5678",
+					"path": [
+						"api",
+						"v1",
+						"public",
+						"songs"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Private Songs",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW51ZWxANTdibG9ja3MuY29tIiwiaWF0IjoxNjc2NjczOTIwLCJleHAiOjE2NzY2NzUxMjB9.9TtJp2XbVBQ-65kVW_LlXK2qax3MRo_WsDfUUOKdXOc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5678/api/v1/private/songs?page=0&size=20",
+					"host": [
+						"localhost"
+					],
+					"port": "5678",
+					"path": [
+						"api",
+						"v1",
+						"private",
+						"songs"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Song",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW51ZWxANTdibG9ja3MuY29tIiwiaWF0IjoxNjc2NjYyNTEzLCJleHAiOjE2NzY2NjM3MTN9.DvygknbfeuoJrw0db6voxm8zTN-KR_r3rWsKZp4AAb0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Lost on You\",\n    \"artist\": \"LP\",\n    \"genre\": \"Pop\",\n    \"year\": \"2016\",\n    \"country\": \"United States\",\n    \"isPrivate\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5678/api/v1/private/song",
+					"host": [
+						"localhost"
+					],
+					"port": "5678",
+					"path": [
+						"api",
+						"v1",
+						"private",
+						"song"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Song",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmZXJuYW5kb0A1N2Jsb2Nrcy5jb20iLCJpYXQiOjE2NzY2NjUzNjIsImV4cCI6MTY3NjY2NjU2Mn0.PyWD9B6l4nPGxL8M3UhWj309o7We-4jZ1MBsSB2n3VM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 30,\n    \"name\": \"Lost on You\",\n    \"artist\": \"LP\",\n    \"genre\": \"Pop\",\n    \"year\": \"2016\",\n    \"country\": \"United States\",\n    \"isPrivate\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5678/api/v1/private/song",
+					"host": [
+						"localhost"
+					],
+					"port": "5678",
+					"path": [
+						"api",
+						"v1",
+						"private",
+						"song"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
