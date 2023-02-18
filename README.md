@@ -21,7 +21,7 @@ docker build -t music-app-57blocks.jar .
 docker-compose up -d
 ```
 
-4. The app is running in the port 8080. Now you can use the postman collection to execute the endpoints.
+4. The app is running in the port 8080. Now you can use the postman collection located in the /docs folder to execute the endpoints.
 
 
 ## Author
