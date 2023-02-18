@@ -127,6 +127,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>music-app-57blocks</finalName>
 	</build>
 
 </project>
