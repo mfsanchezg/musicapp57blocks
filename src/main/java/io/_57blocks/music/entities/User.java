@@ -18,10 +18,11 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Table(name = "_user")
+@SequenceGenerator(name="user_id_seq", initialValue=5, allocationSize=100)
 public class User implements UserDetails {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="user_id_seq")
     private Integer id;
     private String firstName;
     private String lastName;
