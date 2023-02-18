@@ -17,6 +17,11 @@ public class PublicMusicController {
 
     private final SongService songService;
 
+    @GetMapping(value = "/health")
+    public String health(){
+        return "Hello from music-app-57blocks";
+    }
+
     @GetMapping(value = "/songs", params = { "page", "size" })
     private List<SongResponse> getSongs(@RequestParam int page, @RequestParam int size){
 
