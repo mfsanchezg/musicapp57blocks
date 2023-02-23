@@ -255,17 +255,17 @@ A message and a status that the song was updated successfully for the user.
 
 The project is also running in an AWS instance located in this url, therefore you can use this.
 ```http
-http://musicapp57blocks-env-1.eba-jnvrem93.us-east-2.elasticbeanstalk.com/
+http://57blocksmusicapp.us-east-1.elasticbeanstalk.com/
 ```
 
 You can verify the health of the server executing this URL.
 
 ```http
-http://musicapp57blocks-env-1.eba-jnvrem93.us-east-2.elasticbeanstalk.com/api/v1/public/health
+http://57blocksmusicapp.us-east-1.elasticbeanstalk.com/api/v1/public/health
 ```
 You can retrieve the public songs in the next URL.
 ```http
-http://musicapp57blocks-env-1.eba-jnvrem93.us-east-2.elasticbeanstalk.com/api/v1/public/songs?page=0&size=20
+http://57blocksmusicapp.us-east-1.elasticbeanstalk.com/api/v1/public/songs?page=0&size=20
 ```
 
 ## Author
