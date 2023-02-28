@@ -36,7 +36,7 @@ public class SecurityConfig {
                 .httpBasic()
                 .and()
                 .formLogin().disable()
-                .authorizeHttpRequests().requestMatchers("/api/v1/auth/**", "/api/v1/public/**").permitAll()
+                .authorizeHttpRequests().requestMatchers("/api/v1/auth/**", "/api/v1/public/**", "/v3/**","/swagger-ui/**").permitAll()
                 .anyRequest().authenticated()
 
                 .and()
