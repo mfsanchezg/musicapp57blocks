@@ -10,14 +10,8 @@ import io._57blocks.music.repositories.SongRepository;
 import io._57blocks.music.utils.SongMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -70,7 +64,7 @@ public class SongService {
         Optional<Song> song = songRepository.findById(songRequest.getId());
 
         if(song.isPresent()){
-            if(song.get().getUser().getId() == user.getId()){
+            if(song.get().getUser().getId().intValue() == user.getId().intValue()){
                 Song songToUpdate = songMapper.mapSongRequestToSong(songRequest);
                 songToUpdate.setId(song.get().getId());
                 songToUpdate.setUser(user);

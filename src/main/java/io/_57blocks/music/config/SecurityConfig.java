@@ -32,13 +32,12 @@ public class SecurityConfig {
 
 
         httpSecurity
-                .csrf()
-                .disable()
-                .authorizeHttpRequests()
-                .requestMatchers("/api/v1/auth/**", "/api/v1/public/**")
-                .permitAll()
-                .anyRequest()
-                .authenticated()
+                .csrf().disable()
+                .httpBasic()
+                .and()
+                .formLogin().disable()
+                .authorizeHttpRequests().requestMatchers("/api/v1/auth/**", "/api/v1/public/**").permitAll()
+                .anyRequest().authenticated()
 
                 .and()
                 .exceptionHandling()
